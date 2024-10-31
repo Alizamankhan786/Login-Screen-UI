@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { router } from 'expo-router';
 
 export default function LoginScreen() {
   return (
@@ -13,7 +14,9 @@ export default function LoginScreen() {
           <Text style={styles.tabText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tab}>
-          <Text style={styles.tabText}>Sign Up</Text>
+          <Text onPress={() => router.push({
+            pathname: "/signup",
+          })}  style={styles.tabText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
 
